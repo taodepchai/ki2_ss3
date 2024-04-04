@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function sumArrays(...arrays) {
+      const maxLength = Math.max(...arrays.map((arr) => arr.length));
+
+      let sumArray = [];
+
+      for (let i = 0; i < maxLength; i++) {
+        const sum = arrays.reduce((acc, arr) => acc + (arr[i] || 0), 0);
+        sumArray.push(sum);
+      }
+
+      return sumArray;
+    }
+
+    const arr1 = [1, 2, 3];
+    const arr2 = [4, 5];
+    const arr3 = [7, 8, 9, 10];
+    console.log(sumArrays(arr1, arr2, arr3));
+  </script>
+</html>
